@@ -1,0 +1,12 @@
+<div *ngIf="owner !== ''">
+  <h1>Orders</h1>
+  <table border="1">
+    <tr>
+      <td>Order #</td><td>Owner</td><td>Date</td><td>Options</td>
+    </tr>
+    <tr *ngFor="let order of (orderList | filterOwner:owner)">
+        <td>{{order.number}}</td><td>{{order.owner}}</td><td>{{order.date | date: "MM-dd-yyyy"}}</td>
+        <td><button name="{{order.number}}" (click)="removeOrder($event)">Delete</button></td>
+    </tr>
+  </table>
+</div>

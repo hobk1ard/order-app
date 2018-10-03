@@ -1,0 +1,12 @@
+<form [formGroup]="loginForm" (ngSubmit)="submitForm()">
+  Username: <input type="text" formControlName="username"/> <br />
+  <span style="color: red" [hidden]="loginForm.controls.username.valid || loginForm.controls.username.untouched"><br />
+    Usernames must be 7 characters in length<br />
+  </span>
+  Password: <input type="password" formControlName="password" /><br />
+  <span style="color: red" [hidden]="loginForm.controls.password.valid || loginForm.controls.password.untouched"><br />
+    Passwords must be between 5 and 15 charactersin length<br />
+  </span>
+  <br />
+  <button type="submit" [disabled]="loginForm.invalid">Login</button>
+</form>

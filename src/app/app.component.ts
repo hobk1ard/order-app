@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'order-app';
+  ordersHidden:boolean = true;
+  userId:string = "";
+  displayOrders(userId:string) {
+    console.log(`Displaying orders for ${userId}`);
+    this.userId = userId;
+    this.ordersHidden = false;
+  }
 }
